@@ -36,7 +36,7 @@ PRIORITY = args.priority
 control = 1
 # XLSFILE = TICKETID".xlxs"
 
-for x in ("Critical","High","Normal","Low"):
+for x in ("Critical", "High", "Normal", "Low"):
     if PRIORITY == x:
         control = 0
 
@@ -67,7 +67,6 @@ source_blocks = []
 destination_blocks = []
 service_blocks = []
 access_requests = []
-
 
 
 # Collect sources, destinations and services
@@ -232,7 +231,8 @@ def initialize_requests(username, password):
     return tufin_sc
 
 # Open the MS Excel workbook
-rulebook = load_workbook("rules.xlsx")
+workbook = TICKETID + ".xlsx"
+rulebook = load_workbook(workbook)
 
 # Save the worksheet name for pointing the cells in the correct worksheet
 rules = rulebook.sheetnames
